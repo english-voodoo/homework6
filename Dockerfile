@@ -4,10 +4,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install default-jdk tomcat9 maven git -y
 EXPOSE 80
 EXPOSE 443
-RUN cd /tmp && mkdir boxfuse && cd boxfuse
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && ls -l
-RUN cd boxfuse-sample-java-war-hello && ls -l
-RUN mvn validate && mvn package
-RUN cd target && ls -l
-RUN cp hello-1.0.war /var/lib/tomcat9/webapps/ && ls -l /var/lib/tomcat9/webapps/
+RUN cd /tmp && mkdir boxfuse && cd boxfuse && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && ls -l
+RUN cd boxfuse-sample-java-war-hello && ls -l && mvn validate && mvn package
+RUN cd target && ls -l && cp hello-1.0.war /var/lib/tomcat9/webapps/ && ls -l /var/lib/tomcat9/webapps/
 RUN service tomcat9 restart
