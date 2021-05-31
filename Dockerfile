@@ -9,5 +9,5 @@ WORKDIR /tmp/boxfuse-sample-java-war-hello
 RUN mvn package
 WORKDIR /tmp/boxfuse-sample-java-war-hello/target
 RUN cp ./hello-1.0.war /var/lib/tomcat9/webapps/
-COPY server.xml /usr/share/tomcat9/conf
+COPY server.xml /usr/share/tomcat9/conf/server.xml
 CMD /usr/share/tomcat9/bin/catalina.sh run
