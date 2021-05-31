@@ -7,4 +7,5 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /tmp/boxfuse-sample-java-war-hello
 RUN mvn package
 WORKDIR /tmp/boxfuse-sample-java-war-hello/target
+RUN ls -l $CATALINA_HOME/webapps
 RUN cp /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war $CATALINA_HOME/webapps
