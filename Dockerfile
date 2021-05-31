@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 RUN apt update
-RUN apt install default-jdk tomcat9 maven -y
+RUN apt install default-jdk tomcat9 maven git -y
 EXPOSE 80
 EXPOSE 443
 RUN cd /tmp
