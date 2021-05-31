@@ -9,3 +9,4 @@ RUN mvn package
 WORKDIR $CATALINA_HOME/webapps
 RUN echo $CATALINA_HOME 
 RUN ls -l /tmp/boxfuse-sample-java-war-hello/target/ && cp /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war $CATALINA_HOME/webapps && ls -l $CATALINA_HOME/webapps
+RUN find / -type d -name webapps
