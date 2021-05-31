@@ -6,4 +6,4 @@ EXPOSE 80
 EXPOSE 443
 RUN cd /tmp && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd /tmp/boxfuse-sample-java-war-hello && ls -l && mvn validate && mvn package
 RUN cd /tmp/boxfuse-sample-java-war-hello/target && ls -l && cp ./hello-1.0.war /var/lib/tomcat9/webapps/ && ls -l /var/lib/tomcat9/webapps/
-RUN service tomcat9 restart
+RUN  systemctl restart tomcat9
